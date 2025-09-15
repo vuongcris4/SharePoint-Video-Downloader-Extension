@@ -1,107 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SharePoint Video Downloader</title>
+  <title>SharePoint Downloader</title>
+  <meta charset="UTF-8">
   <style>
     body {
-      width: 400px;
-      padding: 15px;
+      width: 300px; /* Thu nhỏ chiều rộng */
+      padding: 20px;
       font-family: Arial, sans-serif;
+      text-align: center; /* Căn giữa nội dung */
+      color: #333;
     }
-    h2 {
-      margin-top: 0;
-      color: #0078d4;
-    }
-    .button {
-      background-color: #0078d4;
-      color: white;
-      border: none;
-      padding: 8px 15px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 14px;
-      margin: 4px 2px;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-    .button:disabled {
-      background-color: #cccccc;
-      cursor: not-allowed;
-    }
-    input[type="text"] {
-      width: 100%;
-      padding: 8px;
-      margin: 8px 0;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    .status {
-      margin-top: 10px;
-      padding: 5px;
-      border-radius: 4px;
-    }
-    .code-block {
-      background-color: #f5f5f5;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      padding: 10px;
-      font-family: monospace;
-      white-space: pre-wrap;
-      word-break: break-all;
-      margin: 10px 0;
-    }
-    .settings-icon {
-      float: right;
-      cursor: pointer;
-    }
-    .settings-panel {
-      margin-top: 10px;
-      padding: 10px;
-      background-color: #f9f9f9;
-      border-radius: 4px;
-    }
-    .hidden {
-      display: none;
+    #status-message {
+      font-size: 16px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <h2>SharePoint Video Downloader</h2>
-  <div id="main-panel">
-    <p>Enter video filename:</p>
-    <input type="text" id="filename" placeholder="video.mp4">
-    
-    <button id="detect-video" class="button">Detect Video</button>
-    <button id="copy-command" class="button" disabled>Copy FFmpeg Command</button>
-    
-    <div id="video-info" class="hidden">
-      <p>Video detected! Ready to download.</p>
-      <div id="command-section" class="hidden">
-        <p>Run this command in your terminal:</p>
-        <div class="code-block" id="ffmpeg-command"></div>
-        <button id="copy-to-clipboard" class="button">Copy to Clipboard</button>
-      </div>
-    </div>
-    
-    <div id="status" class="status"></div>
-    
-    <p class="settings-icon" id="show-settings">Settings</p>
-  </div>
-  
-  <div id="settings-panel" class="settings-panel hidden">
-    <h3>FFmpeg Settings</h3>
-    <p>Path to FFmpeg:</p>
-    <input type="text" id="ffmpeg-path" placeholder="C:\ffmpeg\bin\ffmpeg.exe">
-    <p>Download folder:</p>
-    <input type="text" id="download-folder" placeholder="C:\Downloads">
-    <button id="save-settings" class="button">Save Settings</button>
-    <button id="back-to-main" class="button">Back</button>
-  </div>
-
-  <button id="download-transcript" class="button" disabled>Download Transcript</button>
-  
+  <div id="status-message">Đang xử lý...</div>
   <script src="popup.js"></script>
 </body>
 </html>
